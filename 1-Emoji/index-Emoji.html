@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="BG.css">
+
+</head>
+
+<body>
+    <div id="emoji">
+        <button @click="plus(10),likes(1)" class="btn"><div><img src="img/like.png" alt="" width="100" height="100"><br>+10 <br> Like ={{like}}</div></button>
+        <button @click="plus(20),loves(1)" class="btn"><div><img src="img/love.png" alt="" width="100" height="100"><br>+20 <br> Love ={{love}}</div></button>
+        <button @click="plus(25),smills(1)" class="btn"><div><img src="img/smill.png" alt="" width="100" height="100"><br>+25 <br> Smill ={{smill}}</div></button>
+        <button @click="plus(30),wows(1)" class="btn"><div><img src="img/wow.png" alt="" width="100" height="100"><br>+30 <br> WOW ={{wow}}</div></button>
+        <button @click="minus(15),sads(1)" class="btn"><div><img src="img/sad.png" alt="" width="100" height="100"><br>-15 <br> Sad ={{sad}}</div></button>
+        <button @click="minus(50),angrys(1)" class="btn"><div><img src="img/angry.png" alt="" width="100" height="100"><br>-50 <br> Angry ={{angry}}</div></button>
+        <p style="font-size: 50px; text-align: center; color: white;">{{ counter }} Score.</p>
+
+    </div>    
+</body>
+
+</html>
+<script>
+    var emoji = new Vue({
+        el: '#emoji',
+        data: {
+            counter: 0,
+            like: 0,
+            love: 0,
+            wow: 0,
+            smill: 0,
+            sad: 0,
+            angry: 0,
+        },
+        methods: {
+            plus: function(i) {
+                this.counter += i;
+            },
+
+            minus: function(i) {
+                this.counter -= i;
+            },
+            likes: function(i) {
+                this.like += i;
+            },
+            loves: function(i) {
+                this.love += i;
+            },
+            wows: function(i) {
+                this.wow += i;
+            },
+            smills: function(i) {
+                this.smill += i;
+            },
+            sads: function(i) {
+                this.sad += i;
+            },
+            angrys: function(i) {
+                this.angry += i;
+            },
+        }
+    })
+</script>
